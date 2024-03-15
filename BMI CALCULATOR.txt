@@ -1,0 +1,42 @@
+def calculate_bmi(weight, height):
+    """
+    Calculate BMI (Body Mass Index) using the formula: BMI = weight / (height * height)
+    :param weight: Weight in kilograms
+    :param height: Height in meters
+    :return: BMI value
+    """
+    bmi = weight / (height ** 2)
+    return bmi
+
+def interpret_bmi(bmi):
+    """
+    Interpret BMI values based on standard categories
+    :param bmi: BMI value
+    :return: Interpretation of BMI
+    """
+    if bmi < 18.5:
+        return "Underweight"
+    elif 18.5 <= bmi < 24.9:
+        return "Normal weight"
+    elif 25 <= bmi < 29.9:
+        return "Overweight"
+    else:
+        return "Obese"
+
+def main():
+    
+    weight = float(input("Enter your weight in kilograms: "))
+    height = float(input("Enter your height in meters: "))
+
+   
+    bmi = calculate_bmi(weight, height)
+
+  
+    interpretation = interpret_bmi(bmi)
+
+   
+    print(f"Your BMI is: {bmi:.2f}")
+    print(f"You are classified as: {interpretation}")
+
+if __name__ == "__main__":
+    main()
